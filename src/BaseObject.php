@@ -74,7 +74,7 @@ abstract class BaseObject {
 		$this->_sanityCheck();
 
 		if ( empty( self::$_instances ) ) {
-			add_action( 'init', 'self::registerAll' );
+			add_action( 'init', [__CLASS__, 'registerAll'] );
 		}
 	}
 
@@ -167,7 +167,7 @@ abstract class BaseObject {
 		global $wp_taxonomies;
 
 		foreach ( self::$_instances['taxonomy'] as $instance ) {
-			if ( $instance->_registered ) {
+			if ( $instance->_is_registered ) {
 				continue;
 			}
 
@@ -180,7 +180,7 @@ abstract class BaseObject {
 		}
 
 		foreach ( self::$_instances['cpt'] as $instance ) {
-			if ( $instance->_registered ) {
+			if ( $instance->_is_registered ) {
 				continue;
 			}
 

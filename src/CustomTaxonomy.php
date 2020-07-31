@@ -2,7 +2,7 @@
 
 namespace ET\DBO;
 
-use \{WP_Error, WP_Term};
+use WP_Error, WP_Term;
 
 
 abstract class CustomTaxonomy extends BaseObject {
