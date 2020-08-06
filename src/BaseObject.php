@@ -2,7 +2,7 @@
 
 namespace ET\DBO;
 
-use function \et_;
+use function et_;
 use WP_Post_Type;
 use WP_Taxonomy;
 
@@ -142,7 +142,7 @@ abstract class BaseObject {
 	 *
 	 * @since ??
 	 */
-	public static function instance(): ?self {
+	public static function instance(): self {
 		if ( $instance = et_()->arrayGet( self::$_instances, [ static::$wp_type, static::$name ], null ) ) {
 			return $instance;
 		}
