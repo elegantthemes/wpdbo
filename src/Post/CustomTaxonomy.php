@@ -1,6 +1,6 @@
 <?php
 
-namespace ET\DBO;
+namespace ET\DBO\Post\Post;
 
 use WP_Error, WP_Term;
 
@@ -9,21 +9,21 @@ abstract class CustomTaxonomy extends BaseObject {
 	/**
 	 * Taxonomy key.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	public static string $name;
 
 	/**
 	 * The post types to which this taxonomy applies.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	public array $post_types;
 
 	/**
 	 * This taxonomy's terms.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 * @var WP_Term[]
 	 */
 	public array $terms;
@@ -36,7 +36,7 @@ abstract class CustomTaxonomy extends BaseObject {
 	/**
 	 * Taxonomy constructor.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		parent::__construct();
@@ -47,7 +47,7 @@ abstract class CustomTaxonomy extends BaseObject {
 		 * Filters the supported post types for a custom taxonomy. The dynamic portion of the
 		 * filter name, $name, refers to the name of the custom taxonomy.
 		 *
-		 * @since ??
+		 * @since 1.0.0
 		 *
 		 * @param array
 		 */
@@ -57,7 +57,7 @@ abstract class CustomTaxonomy extends BaseObject {
 	/**
 	 * Get the terms for this taxonomy.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 *
 	 * @return array|int|WP_Error|WP_Term[]
 	 */

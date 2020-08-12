@@ -1,9 +1,9 @@
 <?php
 
-namespace ET\DBO;
+namespace ET\DBO\Post;
 
-use function \et_;
-use \{WP_Post, WP_Query};
+use function et_;
+use WP_Post, WP_Query;
 
 
 class PostQuery {
@@ -11,14 +11,14 @@ class PostQuery {
 	/**
 	 * Whether or not to negate the next query arg that is set. Default 'false'.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	protected bool $_should_negate = false;
 
 	/**
 	 * The query result.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 * @var   WP_Post|WP_Post[]
 	 */
 	protected $_query_result;
@@ -26,7 +26,7 @@ class PostQuery {
 	/**
 	 * The args that will be passed to {@see WP_Query} the next time {@see self::run()} is called.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	protected array $_wp_query_args;
 
@@ -57,7 +57,7 @@ class PostQuery {
 	/**
 	 * ET_Core_Post_Query constructor.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 *
 	 * @param string $post_type    See {@see self::$post_type}
 	 * @param string $category_tax See {@see self::$category_tax}
@@ -77,7 +77,7 @@ class PostQuery {
 	/**
 	 * Adds a meta query to the WP Query args for this instance.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 *
 	 * @param string  $key            The meta key.
 	 * @param ?mixed  $value          The meta value.
@@ -122,7 +122,7 @@ class PostQuery {
 	/**
 	 * Adds a tax query to the WP Query args for this instance.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 *
 	 * @param string  $taxonomy       The taxonomy name.
 	 * @param array   $terms          Taxonomy terms.
@@ -160,7 +160,7 @@ class PostQuery {
 	/**
 	 * Resets {@see self::$_should_negate} to default then returns the previous value.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	protected function _resetNegation(): bool {
 		$negate = $this->_should_negate;
@@ -173,7 +173,7 @@ class PostQuery {
 	/**
 	 * Adds a tax query to this instance's WP Query args for it's category taxonomy.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 *
 	 * @param mixed ...$categories Variable number of category arguments where each arg can be
 	 *                             a single category name or ID or an array of names or IDs.
@@ -197,7 +197,7 @@ class PostQuery {
 	/**
 	 * Negates the next query arg that is set.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	public function not(): self {
 		$this->_should_negate = true;
@@ -222,7 +222,7 @@ class PostQuery {
 	 *         ->not()->in_category( 'some_cat' )
 	 *         ->run();
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 *
 	 * @param array $args Optional. Additional arguments for {@see WP_Query}.
 	 *
@@ -243,7 +243,7 @@ class PostQuery {
 		 * Filters the WP Query args for a custom post type query. The dynamic portion of
 		 * the filter name, $name, refers to the name of the custom post type.
 		 *
-		 * @since ??
+		 * @since 1.0.0
 		 *
 		 * @param array $args {@see WP_Query::__construct()}
 		 */
@@ -257,7 +257,7 @@ class PostQuery {
 	/**
 	 * Adds a meta query to this instance's WP Query args.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 *
 	 * @param string $key   The meta key.
 	 * @param ?mixed $value Optional. The meta value to compare. When `$value` is not provided,
@@ -274,7 +274,7 @@ class PostQuery {
 	/**
 	 * Adds a tax query to this instance's WP Query args for it's primary tag-like taxonomy.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 *
 	 * @param mixed ...$tags Variable number of tag arguments where each arg can be
 	 *                       a single tag name or ID, or an array of tag names or IDs.

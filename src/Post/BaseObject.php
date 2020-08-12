@@ -1,6 +1,6 @@
 <?php
 
-namespace ET\DBO;
+namespace ET\DBO\Post\Post;
 
 use function et_;
 use WP_Post_Type;
@@ -12,7 +12,7 @@ abstract class BaseObject {
 	/**
 	 * Current instances of this class organized by type.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 * @var   array[] {
 	 *
 	 * @type BaseObject[] $type {
@@ -28,21 +28,21 @@ abstract class BaseObject {
 	/**
 	 * The `$args` array used when registering this entity.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	protected array $_args;
 
 	/**
 	 * Whether or not the object has been registered.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	protected bool $_is_registered = false;
 
 	/**
 	 * The WP object for this instance.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 * @var   WP_Post_Type|WP_Taxonomy
 	 */
 	protected $_wp_object;
@@ -50,21 +50,21 @@ abstract class BaseObject {
 	/**
 	 * Post object key.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	public static string $name;
 
 	/**
 	 * Post object type. Accepts 'cpt', 'taxonomy'.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	public static string $wp_type;
 
 	/**
 	 * BaseObject constructor.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		$this->_args           = $this->_args();
@@ -81,7 +81,7 @@ abstract class BaseObject {
 	/**
 	 * Applies filters to the instance's filterable properties.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	protected function _applyFilters(): void {
 		$name = static::$name;
@@ -93,7 +93,7 @@ abstract class BaseObject {
 		 *   - `$type` Will be `cpt` or `taxonomy`.
 		 *   - `$name` Refers to the name/key of the post type or taxonomy being registered.
 		 *
-		 * @since ??
+		 * @since 1.0.0
 		 *
 		 * @param  array  $args  {@see register_post_type()} and {@see register_taxonomy()}
 		 */
@@ -104,7 +104,7 @@ abstract class BaseObject {
 	 * Returns the args for the instance. See {@see register_post_type()} or
 	 * {@see register_taxonomy()}.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	abstract protected function _args(): array;
 
@@ -112,21 +112,21 @@ abstract class BaseObject {
 	 * This method is called right before registering the object. It is intended to be
 	 * overridden by child classes as needed.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	protected function _beforeRegister(): void {}
 
 	/**
 	 * Returns labels for the instance. See {@see register_post_type()} or {@see register_taxonomy()}.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	abstract protected function _labels(): array;
 
 	/**
 	 * Checks for required properties and existing instances.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	protected function _sanityCheck(): void {
 		if ( ! $this->_args || ! static::$name || ! static::$wp_type ) {
@@ -140,7 +140,7 @@ abstract class BaseObject {
 	/**
 	 * Get a derived class instance.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	public static function instance(): self {
 		if ( $instance = et_()->arrayGet( self::$_instances, [ static::$wp_type, static::$name ], null ) ) {
@@ -157,7 +157,7 @@ abstract class BaseObject {
 	/**
 	 * Calls either {@see register_post_type} or {@see register_taxonomy} for each instance.
 	 *
-	 * @since ??
+	 * @since 1.0.0
 	 */
 	public static function registerAll(): void {
 		if ( empty( self::$_instances ) ) {
