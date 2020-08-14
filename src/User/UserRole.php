@@ -1,6 +1,6 @@
 <?php
 
-namespace ET\DBO\Post\User;
+namespace ET\DBO\User;
 
 use WP_Role;
 use function add_role, et_, et_wrong;
