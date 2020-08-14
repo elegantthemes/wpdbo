@@ -1,6 +1,6 @@
 <?php
 
-namespace ET\DBO\Post\Post;
+namespace ET\DBO\Post;
 
 use function et_;
 use WP_Post_Type;

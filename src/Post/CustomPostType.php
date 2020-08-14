@@ -1,6 +1,6 @@
 <?php
 
-namespace ET\DBO\Post\Post;
+namespace ET\DBO\Post;
 
 
 abstract class CustomPostType extends BaseObject {

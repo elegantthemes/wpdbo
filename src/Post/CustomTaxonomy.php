@@ -1,6 +1,6 @@
 <?php
 
-namespace ET\DBO\Post\Post;
+namespace ET\DBO\Post;
 
 use WP_Error, WP_Term;
 
