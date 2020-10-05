@@ -124,6 +124,13 @@ abstract class BaseObject {
 	abstract protected function _labels(): array;
 
 	/**
+	 * Returns meta field definitions for the instance. See {@see register_post_meta()} or {@see register_term_meta()}.
+	 *
+	 * @since 1.2.0
+	 */
+	abstract protected function _meta(): array;
+
+	/**
 	 * Checks for required properties and existing instances.
 	 *
 	 * @since 1.0.0
@@ -177,6 +184,10 @@ abstract class BaseObject {
 
 			$instance->_wp_object     = $wp_taxonomies[ $instance::$name ];
 			$instance->_is_registered = true;
+
+			foreach ( $instance->_meta() as $field => $definition ) {
+				register_term_meta( $instance::$name, $field, $definition );
+			}
 		}
 
 		foreach ( self::$_instances['cpt'] as $instance ) {
@@ -188,6 +199,10 @@ abstract class BaseObject {
 
 			$instance->_wp_object     = register_post_type( $instance::$name, $instance->_args );
 			$instance->_is_registered = true;
+
+			foreach ( $instance->_meta() as $field => $definition ) {
+				register_post_meta( $instance::$name, $field, $definition );
+			}
 		}
 	}
 }
