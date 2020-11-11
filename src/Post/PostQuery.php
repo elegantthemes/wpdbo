@@ -194,6 +194,10 @@ class PostQuery {
 		return $this;
 	}
 
+	public function name( string $slug ): self {
+		return $this->slug( $slug );
+	}
+
 	/**
 	 * Negates the next query arg that is set.
 	 *
@@ -252,6 +256,12 @@ class PostQuery {
 		$query = new WP_Query( $this->_wp_query_args );
 
 		return $this->_query_result = $query->posts;
+	}
+
+	public function slug( string $slug ): self {
+		$this->_wp_query_args['post_name__in'] = $slug;
+
+		return $this;
 	}
 
 	/**

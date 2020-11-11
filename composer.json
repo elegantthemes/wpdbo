@@ -3,7 +3,7 @@
   "description": "WordPress Database Objects - Work with posts and taxonomies, including queries and custom type registration, using OOP style.",
   "type": "library",
   "license": "GPL-v2-or-later",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "authors": [
     {
       "name": "Elegant Themes",
