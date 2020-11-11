@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9947cd8d503421f6430c0a95203dcc58",
+    "content-hash": "0e591b9c7c36402ce37d7641f444ad22",
     "packages": [
         {
             "name": "elegantthemes/ease",
