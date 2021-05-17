@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a2e1df505753ac84f320eb5a0efbc93",
+    "content-hash": "1e6b281d53a7e77a8f4579614ffbb42f",
     "packages": [
         {
             "name": "elegantthemes/ease",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:elegantthemes/ease.git",
-                "reference": "d169e0199509c505f3157ba741d4cf95ee9ba0f3"
+                "reference": "2595f703f52fb149f5f9f78a3fe98686cda9fb34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elegantthemes/ease/zipball/d169e0199509c505f3157ba741d4cf95ee9ba0f3",
-                "reference": "d169e0199509c505f3157ba741d4cf95ee9ba0f3",
+                "url": "https://api.github.com/repos/elegantthemes/ease/zipball/2595f703f52fb149f5f9f78a3fe98686cda9fb34",
+                "reference": "2595f703f52fb149f5f9f78a3fe98686cda9fb34",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -50,10 +50,10 @@
             ],
             "description": "Utilities that make reading and writing PHP code more convenient and enjoyable",
             "support": {
-                "source": "https://github.com/elegantthemes/ease/tree/1.2.0",
+                "source": "https://github.com/elegantthemes/ease/tree/1.2.1",
                 "issues": "https://github.com/elegantthemes/ease/issues"
             },
-            "time": "2020-10-13T21:01:54+00:00"
+            "time": "2021-05-17T22:06:38+00:00"
         }
     ],
     "packages-dev": [],
