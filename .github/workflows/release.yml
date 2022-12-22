@@ -1,0 +1,55 @@
+name: Release
+on:
+  push:
+    branches:
+      - master
+
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+jobs:
+  #==========================#
+  # 1. Create GitHub Release #
+  #==========================#
+  CreateGitHubRelease:
+    if: "contains(toJSON(github.event.commits.*.message), 'build: [release]')"
+    runs-on: ubuntu-20.04
+    outputs:
+      current_version: ${{ steps.generate-version.outputs.CURRENT_VERSION }}
+      new_version: ${{ steps.generate-version.outputs.NEXT_VERSION }}
+      status: ${{ steps.create-release.outcome }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ETSTAGING_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          tools: composer:v2
+
+      - name: Create Release
+        id: create-release
+        uses: undergroundwires/bump-everywhere@1.4.0
+        with:
+          git-token: ${{ secrets.ETSTAGING_TOKEN }}
+          release-token: ${{ secrets.ETSTAGING_TOKEN }}
+
+      - name: Notify Packagist
+        id: notify-packagist
+        env:
+          TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
+          REPO_URL: ${{ github.repositoryUrl }}
+        run: >
+          curl
+            -X POST
+            -H 'content-type:application/json'
+            "https://packagist.org/api/update-package?username=elegantthemes&apiToken=${TOKEN}"
+            -d "{\"repository\":{\"url\":\"${REPO_URL}\"}}"

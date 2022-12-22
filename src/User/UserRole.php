@@ -37,7 +37,16 @@ abstract class UserRole {
 	}
 
 	public function maybeAddRole(): void {
-		if ( ! get_role( $this->name ) ) {
+		$role       = get_role( $this->name );
+		$should_add = is_null( $role );
+
+		if ( $role && ( $role->capabilities != $this->capabilities ) ) {
+			$should_add = true;
+
+			remove_role( $this->name );
+		}
+
+		if ( $should_add ) {
 			add_role( $this->name, $this->display_name, $this->capabilities );
 		}
 	}
