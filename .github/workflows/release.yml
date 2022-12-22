@@ -47,10 +47,6 @@ jobs:
         env:
           TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
           REPO_URL: https://github.com/${{ github.repository }}
-        run: >
-          curl
-            -X POST
-            -H 'content-type: application/json'
-            -d "{\"repository\":{\"url\":\"${REPO_URL}\"}}"
-            "https://packagist.org/api/update-package?username=elegantthemes&apiToken=${TOKEN}"
+        run: |
+          curl -X POST -H 'content-type: application/json' -d "{\"repository\":{\"url\":\"${REPO_URL}\"}}" "https://packagist.org/api/update-package?username=elegantthemes&apiToken=${TOKEN}"
 
