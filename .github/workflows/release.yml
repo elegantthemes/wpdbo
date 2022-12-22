@@ -46,7 +46,7 @@ jobs:
         id: notify-packagist
         env:
           TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
-          REPO_URL: ${{ github.repositoryUrl }}
+          REPO_URL: https://github.com/${{ github.repository }}
         run: >
           curl
             -X POST
