@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.5 (2022-12-22)
+
+* chore: fix repo url in github actions workflow | [6787c26](https://github.com/elegantthemes/wpdbo/commit/6787c26f9002b3d21a11a696b09d7ed25677fc21)
+
+[compare](https://github.com/elegantthemes/wpdbo/compare/1.3.4...1.3.5)
+
 ## 1.3.4 (2022-12-22)
 
 * chore: fix repo url in github actions workflow | [9662453](https://github.com/elegantthemes/wpdbo/commit/966245324f21f206f522569c60edd57213ffa902)
