@@ -50,6 +50,7 @@ jobs:
         run: >
           curl
             -X POST
-            -H 'content-type:application/json'
-            "https://packagist.org/api/update-package?username=elegantthemes&apiToken=${TOKEN}"
+            -H 'content-type: application/json'
             -d "{\"repository\":{\"url\":\"${REPO_URL}\"}}"
+            "https://packagist.org/api/update-package?username=elegantthemes&apiToken=${TOKEN}"
+
