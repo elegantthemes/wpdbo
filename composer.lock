@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e6b281d53a7e77a8f4579614ffbb42f",
+    "content-hash": "54dc5538653b330eba283a72f3c653fd",
     "packages": [
         {
             "name": "elegantthemes/ease",
             "version": "1.2.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:elegantthemes/ease.git",
+                "url": "https://github.com/elegantthemes/ease.git",
                 "reference": "2595f703f52fb149f5f9f78a3fe98686cda9fb34"
             },
             "dist": {
@@ -21,7 +21,7 @@
                 "shasum": "",
                 "mirrors": [
                     {
-                        "url": "https://elegantthemes.repo.repman.io/dists/%package%/%version%/%reference%.%type%",
+                        "url": "https://repo.repman.io/dists/%package%/%version%/%reference%.%type%",
                         "preferred": true
                     }
                 ]
@@ -38,7 +38,7 @@
                     "ET\\Ease\\": "src/"
                 }
             },
-            "notification-url": "https://elegantthemes.repo.repman.io/downloads",
+            "notification-url": "https://repo.repman.io/downloads",
             "license": [
                 "GPL-v2-or-later"
             ],
@@ -50,8 +50,8 @@
             ],
             "description": "Utilities that make reading and writing PHP code more convenient and enjoyable",
             "support": {
-                "source": "https://github.com/elegantthemes/ease/tree/1.2.1",
-                "issues": "https://github.com/elegantthemes/ease/issues"
+                "issues": "https://github.com/elegantthemes/ease/issues",
+                "source": "https://github.com/elegantthemes/ease/tree/1.2.1"
             },
             "time": "2021-05-17T22:06:38+00:00"
         }
@@ -66,5 +66,5 @@
         "php": ">=7.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }

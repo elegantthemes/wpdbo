@@ -2,7 +2,7 @@
   "name": "elegantthemes/wpdbo",
   "description": "WordPress Database Objects - Work with posts and taxonomies, including queries and custom type registration, using OOP style.",
   "type": "library",
-  "license": "GPL-v2-or-later",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "Elegant Themes",
