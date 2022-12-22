@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.7 (2022-12-22)
+
+* chore: fix license in composer.json | [3176222](https://github.com/elegantthemes/wpdbo/commit/317622273a2feaedc1a8e92abd7487d51a95cb71)
+
+[compare](https://github.com/elegantthemes/wpdbo/compare/1.3.6...1.3.7)
+
 ## 1.3.6 (2022-12-22)
 
 * chore: fix repo url in github actions workflow | [3db9717](https://github.com/elegantthemes/wpdbo/commit/3db971771fd6e96ec56b5be5353d643a91ef8046)
