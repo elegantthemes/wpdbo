@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.4 (2022-12-22)
+
+* chore: fix repo url in github actions workflow | [9662453](https://github.com/elegantthemes/wpdbo/commit/966245324f21f206f522569c60edd57213ffa902)
+
+[compare](https://github.com/elegantthemes/wpdbo/compare/1.3.3...1.3.4)
+
 ## 1.3.3 (2022-12-22)
 
 * chore: add CODEOWNERS file | [3566905](https://github.com/elegantthemes/wpdbo/commit/356690526563fe9a3b19b1f51be7aa83015ca78c)
